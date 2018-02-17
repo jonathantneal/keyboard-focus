@@ -1,0 +1,50 @@
+{
+  "name": "keyboard-focus",
+  "version": "1.0.0",
+  "description": "Detect when an element has received focus from a keyboard",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "W3C",
+  "repository": "jonathantneal/keyboard-focus",
+  "homepage": "https://github.com/jonathantneal/keyboard-focus#readme",
+  "bugs": "https://github.com/jonathantneal/keyboard-focus/issues",
+  "main": "index.bundle.js",
+  "module": "index.js",
+  "files": [
+    "index.js",
+    "index.bundle.js"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm test",
+    "pretest": "rollup -c .rollup.js --silent",
+    "test": "echo 'Running tests...'; npm run test:ec && npm run test:js",
+    "test:ec": "echint --ignore index.bundle.js test",
+    "test:js": "eslint *.js --cache --ignore-path .gitignore --quiet"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6",
+    "babel-eslint": "^8",
+    "babel-preset-env": "^1",
+    "echint": "^4",
+    "eslint": "^4",
+    "eslint-config-dev": "^2",
+    "pre-commit": "^1",
+    "rollup": "^0",
+    "rollup-plugin-babel": "^3"
+  },
+  "eslintConfig": {
+    "extends": "dev",
+    "parser": "babel-eslint"
+  },
+  "keywords": [
+    "keyboard",
+    "focus",
+    "visible",
+    "ring",
+    "pointer",
+    "mouse",
+    "touch"
+  ]
+}
