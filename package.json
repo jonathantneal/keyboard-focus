@@ -1,44 +1,44 @@
 {
   "name": "keyboard-focus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Detect when an element has received focus from a keyboard",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "W3C",
   "repository": "jonathantneal/keyboard-focus",
   "homepage": "https://github.com/jonathantneal/keyboard-focus#readme",
   "bugs": "https://github.com/jonathantneal/keyboard-focus/issues",
-  "main": "index.bundle.js",
-  "module": "index.js",
+  "main": "index.umd.js",
+  "module": "index.es.js",
   "files": [
-    "index.js",
-    "index.bundle.js"
+    "index.es.js",
+    "index.umd.js"
   ],
   "scripts": {
     "prepublishOnly": "npm test",
     "pretest": "rollup -c .rollup.js --silent",
-    "test": "echo 'Running tests...'; npm run test:ec && npm run test:js",
-    "test:ec": "echint --ignore index.bundle.js test",
+    "test": "echo 'Running tests...'; npm run test:js",
     "test:js": "eslint *.js --cache --ignore-path .gitignore --quiet"
   },
   "engines": {
     "node": ">=4.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6",
-    "babel-eslint": "^8",
-    "babel-preset-env": "^1",
-    "echint": "^4",
-    "eslint": "^4",
-    "eslint-config-dev": "^2",
-    "pre-commit": "^1",
-    "rollup": "^0",
-    "rollup-plugin-babel": "^3"
+    "babel-core": "^6.26",
+    "babel-eslint": "^8.2",
+    "babel-preset-env": "^1.6",
+    "eslint": "^4.18",
+    "eslint-config-dev": "2.0",
+    "pre-commit": "^1.2",
+    "rollup": "^0.56",
+    "rollup-plugin-babel": "^3.0"
   },
   "eslintConfig": {
     "extends": "dev",
     "parser": "babel-eslint"
   },
   "keywords": [
+    "javascript",
+    "js",
     "keyboard",
     "focus",
     "visible",
