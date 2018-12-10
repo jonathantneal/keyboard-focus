@@ -30,7 +30,7 @@ export default function keyboardFocus(document) {
 	function onFocus(event) {
 		// Prevent IE from focusing the document or HTML element.
 		if (event.target !== document && event.target.nodeName !== 'HTML' && hadKeyboardEvent) {
-			event.target.setAttribute('keyboard-focus', '');
+			event.target.setAttribute('data-keyboard-focus', 'true');
 
 			hadKeyboardEvent = false;
 		}
@@ -45,7 +45,7 @@ export default function keyboardFocus(document) {
 			return;
 		}
 
-		if (event.target.hasAttribute('keyboard-focus')) {
+		if (event.target.hasAttribute('data-keyboard-focus')) {
 			// To detect a tab/window switch, we look for a blur event followed
 			// rapidly by a visibility change.
 			// If we don't see a visibility change within 100ms, it's probably
@@ -60,7 +60,7 @@ export default function keyboardFocus(document) {
 				clearTimeout(hadFocusVisibleRecentlyTimeout);
 			}, 100);
 
-			event.target.removeAttribute('keyboard-focus');
+			event.target.removeAttribute('data-keyboard-focus');
 		}
 	}
 
